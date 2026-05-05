@@ -1,0 +1,659 @@
+{
+  "graph_stats": {
+    "num_nodes": 52,
+    "num_edges": 45,
+    "nodes": [
+      "OpenAI",
+      "Sam Altman",
+      "Elon Musk",
+      "Greg Brockman",
+      "Ilya Sutskever",
+      "John Schulman",
+      "Wojciech Zaremba",
+      "2015",
+      "San Francisco",
+      "Google",
+      "Larry Page",
+      "Sergey Brin",
+      "1998",
+      "Alphabet Inc.",
+      "Mountain View",
+      "Microsoft",
+      "Bill Gates",
+      "Paul Allen",
+      "1975",
+      "Satya Nadella",
+      "Redmond",
+      "Meta",
+      "Mark Zuckerberg",
+      "Eduardo Saverin",
+      "Andrew McCollum",
+      "Dustin Moskovitz",
+      "Chris Hughes",
+      "2004",
+      "Menlo Park",
+      "Amazon",
+      "Jeff Bezos",
+      "1994",
+      "Andy Jassy",
+      "Seattle",
+      "Apple",
+      "Steve Jobs",
+      "Steve Wozniak",
+      "Ronald Wayne",
+      "1976",
+      "Tim Cook",
+      "Cupertino",
+      "Tesla",
+      "Martin Eberhard",
+      "Marc Tarpenning",
+      "2003",
+      "Austin",
+      "NVIDIA",
+      "Jensen Huang",
+      "Chris Malachowsky",
+      "Curtis Priem",
+      "1993",
+      "Santa Clara"
+    ],
+    "edges": [
+      [
+        "OpenAI",
+        "Sam Altman",
+        "FOUNDED_BY"
+      ],
+      [
+        "OpenAI",
+        "Elon Musk",
+        "FOUNDED_BY"
+      ],
+      [
+        "OpenAI",
+        "Greg Brockman",
+        "FOUNDED_BY"
+      ],
+      [
+        "OpenAI",
+        "Ilya Sutskever",
+        "FOUNDED_BY"
+      ],
+      [
+        "OpenAI",
+        "John Schulman",
+        "FOUNDED_BY"
+      ],
+      [
+        "OpenAI",
+        "Wojciech Zaremba",
+        "FOUNDED_BY"
+      ],
+      [
+        "OpenAI",
+        "2015",
+        "FOUNDED_IN"
+      ],
+      [
+        "OpenAI",
+        "San Francisco",
+        "HEADQUARTERED_IN"
+      ],
+      [
+        "Google",
+        "Larry Page",
+        "FOUNDED_BY"
+      ],
+      [
+        "Google",
+        "Sergey Brin",
+        "FOUNDED_BY"
+      ],
+      [
+        "Google",
+        "1998",
+        "FOUNDED_IN"
+      ],
+      [
+        "Google",
+        "Alphabet Inc.",
+        "PARENT_COMPANY"
+      ],
+      [
+        "Google",
+        "Mountain View",
+        "HEADQUARTERED_IN"
+      ],
+      [
+        "Microsoft",
+        "Bill Gates",
+        "FOUNDED_BY"
+      ],
+      [
+        "Microsoft",
+        "Paul Allen",
+        "FOUNDED_BY"
+      ],
+      [
+        "Microsoft",
+        "1975",
+        "FOUNDED_IN"
+      ],
+      [
+        "Microsoft",
+        "Satya Nadella",
+        "CEO"
+      ],
+      [
+        "Microsoft",
+        "Redmond",
+        "HEADQUARTERED_IN"
+      ],
+      [
+        "Meta",
+        "Mark Zuckerberg",
+        "FOUNDED_BY"
+      ],
+      [
+        "Meta",
+        "Eduardo Saverin",
+        "FOUNDED_BY"
+      ],
+      [
+        "Meta",
+        "Andrew McCollum",
+        "FOUNDED_BY"
+      ],
+      [
+        "Meta",
+        "Dustin Moskovitz",
+        "FOUNDED_BY"
+      ],
+      [
+        "Meta",
+        "Chris Hughes",
+        "FOUNDED_BY"
+      ],
+      [
+        "Meta",
+        "2004",
+        "FOUNDED_IN"
+      ],
+      [
+        "Meta",
+        "Meta",
+        "RENAMED_TO"
+      ],
+      [
+        "Meta",
+        "Menlo Park",
+        "HEADQUARTERED_IN"
+      ],
+      [
+        "Amazon",
+        "Jeff Bezos",
+        "FOUNDED_BY"
+      ],
+      [
+        "Amazon",
+        "1994",
+        "FOUNDED_IN"
+      ],
+      [
+        "Amazon",
+        "Andy Jassy",
+        "CEO"
+      ],
+      [
+        "Amazon",
+        "Seattle",
+        "HEADQUARTERED_IN"
+      ],
+      [
+        "Apple",
+        "Steve Jobs",
+        "FOUNDED_BY"
+      ],
+      [
+        "Apple",
+        "Steve Wozniak",
+        "FOUNDED_BY"
+      ],
+      [
+        "Apple",
+        "Ronald Wayne",
+        "FOUNDED_BY"
+      ],
+      [
+        "Apple",
+        "1976",
+        "FOUNDED_IN"
+      ],
+      [
+        "Apple",
+        "Tim Cook",
+        "CEO"
+      ],
+      [
+        "Apple",
+        "Cupertino",
+        "HEADQUARTERED_IN"
+      ],
+      [
+        "Tesla",
+        "Martin Eberhard",
+        "FOUNDED_BY"
+      ],
+      [
+        "Tesla",
+        "Marc Tarpenning",
+        "FOUNDED_BY"
+      ],
+      [
+        "Tesla",
+        "2003",
+        "FOUNDED_IN"
+      ],
+      [
+        "Tesla",
+        "Austin",
+        "HEADQUARTERED_IN"
+      ],
+      [
+        "NVIDIA",
+        "Jensen Huang",
+        "CEO"
+      ],
+      [
+        "NVIDIA",
+        "Chris Malachowsky",
+        "FOUNDED_BY"
+      ],
+      [
+        "NVIDIA",
+        "Curtis Priem",
+        "FOUNDED_BY"
+      ],
+      [
+        "NVIDIA",
+        "1993",
+        "FOUNDED_IN"
+      ],
+      [
+        "NVIDIA",
+        "Santa Clara",
+        "HEADQUARTERED_IN"
+      ]
+    ],
+    "extraction_time_sec": 0.0,
+    "build_time_sec": 0.0
+  },
+  "graph_rag_results": [
+    {
+      "index": 1,
+      "query": "Who founded OpenAI?",
+      "type": "Founder",
+      "expected": "Sam Altman, Elon Musk, Greg Brockman",
+      "graph_answer": "\u2705 OpenAI was founded by: Sam Altman, Elon Musk, Greg Brockman, Ilya Sutskever, John Schulman, Wojciech Zaremba",
+      "graph_correct": true,
+      "graph_time_sec": 0.0
+    },
+    {
+      "index": 2,
+      "query": "What year was OpenAI founded?",
+      "type": "Year",
+      "expected": "2015",
+      "graph_answer": "\u2705 OpenAI was founded in 2015",
+      "graph_correct": true,
+      "graph_time_sec": 0.0
+    },
+    {
+      "index": 3,
+      "query": "Which city is OpenAI headquartered in?",
+      "type": "Location",
+      "expected": "San Francisco",
+      "graph_answer": "\u2705 OpenAI is headquartered in San Francisco",
+      "graph_correct": true,
+      "graph_time_sec": 0.0
+    },
+    {
+      "index": 4,
+      "query": "Name the founders of Google.",
+      "type": "Founder",
+      "expected": "Larry Page, Sergey Brin",
+      "graph_answer": "\u2705 Google was founded by: Larry Page, Sergey Brin",
+      "graph_correct": true,
+      "graph_time_sec": 0.0
+    },
+    {
+      "index": 5,
+      "query": "What is the parent company of the company founded by Larry Page?",
+      "type": "Parent",
+      "expected": "Alphabet Inc.",
+      "graph_answer": "\u2705 Google's parent company is Alphabet Inc.",
+      "graph_correct": true,
+      "graph_time_sec": 0.0
+    },
+    {
+      "index": 6,
+      "query": "Which company does Satya Nadella lead?",
+      "type": "Multi-hop CEO",
+      "expected": "Microsoft",
+      "graph_answer": "\u2705 Satya Nadella leads Microsoft",
+      "graph_correct": true,
+      "graph_time_sec": 0.0
+    },
+    {
+      "index": 7,
+      "query": "Who founded the company led by Satya Nadella?",
+      "type": "Multi-hop Founder",
+      "expected": "Bill Gates, Paul Allen",
+      "graph_answer": "\u2705 Microsoft was founded by: Bill Gates, Paul Allen",
+      "graph_correct": true,
+      "graph_time_sec": 0.0
+    },
+    {
+      "index": 8,
+      "query": "Who founded the company led by Andy Jassy?",
+      "type": "Multi-hop Founder",
+      "expected": "Jeff Bezos",
+      "graph_answer": "\u2705 Amazon was founded by: Jeff Bezos",
+      "graph_correct": true,
+      "graph_time_sec": 0.0
+    },
+    {
+      "index": 9,
+      "query": "What is the founding year of the company founded by Jeff Bezos?",
+      "type": "Multi-hop Year",
+      "expected": "1994",
+      "graph_answer": "\u2705 Amazon was founded in 1994",
+      "graph_correct": true,
+      "graph_time_sec": 0.0
+    },
+    {
+      "index": 10,
+      "query": "Which company was founded by Mark Zuckerberg?",
+      "type": "Founder",
+      "expected": "Meta",
+      "graph_answer": "\u2705 Meta",
+      "graph_correct": true,
+      "graph_time_sec": 0.0
+    },
+    {
+      "index": 11,
+      "query": "Who is the CEO of Microsoft?",
+      "type": "CEO",
+      "expected": "Satya Nadella",
+      "graph_answer": "\u2705 The current CEO of Microsoft is Satya Nadella",
+      "graph_correct": true,
+      "graph_time_sec": 0.0
+    },
+    {
+      "index": 12,
+      "query": "Which city is Microsoft headquartered in?",
+      "type": "Location",
+      "expected": "Redmond",
+      "graph_answer": "\u2705 Microsoft is headquartered in Redmond",
+      "graph_correct": true,
+      "graph_time_sec": 0.0
+    },
+    {
+      "index": 13,
+      "query": "Who founded Tesla?",
+      "type": "Founder",
+      "expected": "Martin Eberhard, Marc Tarpenning",
+      "graph_answer": "\u2705 Tesla was founded by: Martin Eberhard, Marc Tarpenning",
+      "graph_correct": true,
+      "graph_time_sec": 0.0
+    },
+    {
+      "index": 14,
+      "query": "When was Tesla founded?",
+      "type": "Year",
+      "expected": "2003",
+      "graph_answer": "\u2705 Tesla was founded in 2003",
+      "graph_correct": true,
+      "graph_time_sec": 0.0
+    },
+    {
+      "index": 15,
+      "query": "Which city is Tesla headquartered in?",
+      "type": "Location",
+      "expected": "Austin",
+      "graph_answer": "\u2705 Tesla is headquartered in Austin",
+      "graph_correct": true,
+      "graph_time_sec": 0.0
+    },
+    {
+      "index": 16,
+      "query": "Who is the CEO of Amazon?",
+      "type": "CEO",
+      "expected": "Andy Jassy",
+      "graph_answer": "\u2705 The current CEO of Amazon is Andy Jassy",
+      "graph_correct": true,
+      "graph_time_sec": 0.0
+    },
+    {
+      "index": 17,
+      "query": "Who founded Apple?",
+      "type": "Founder",
+      "expected": "Steve Jobs, Steve Wozniak, Ronald Wayne",
+      "graph_answer": "\u2705 Apple was founded by: Steve Jobs, Steve Wozniak, Ronald Wayne",
+      "graph_correct": true,
+      "graph_time_sec": 0.0
+    },
+    {
+      "index": 18,
+      "query": "Who founded the company whose CEO is Satya Nadella?",
+      "type": "Multi-hop Founder",
+      "expected": "Bill Gates, Paul Allen",
+      "graph_answer": "\u2705 Microsoft was founded by: Bill Gates, Paul Allen",
+      "graph_correct": true,
+      "graph_time_sec": 0.0
+    },
+    {
+      "index": 19,
+      "query": "Who is the CFO of Anthropic?",
+      "type": "Unknown",
+      "expected": "Kh\u00f4ng t\u00ecm th\u1ea5y",
+      "graph_answer": "\u274c Kh\u00f4ng t\u00ecm th\u1ea5y th\u00f4ng tin li\u00ean quan \u0111\u1ebfn c\u00e2u h\u1ecfi: 'Who is the CFO of Anthropic?'",
+      "graph_correct": true,
+      "graph_time_sec": 0.0
+    },
+    {
+      "index": 20,
+      "query": "Where is SpaceX headquartered?",
+      "type": "Unknown",
+      "expected": "Kh\u00f4ng t\u00ecm th\u1ea5y",
+      "graph_answer": "\u274c Kh\u00f4ng t\u00ecm th\u1ea5y th\u00f4ng tin li\u00ean quan \u0111\u1ebfn c\u00e2u h\u1ecfi: 'Where is SpaceX headquartered?'",
+      "graph_correct": true,
+      "graph_time_sec": 0.0
+    }
+  ],
+  "flat_rag_results": [
+    {
+      "index": 1,
+      "query": "Who founded OpenAI?",
+      "type": "Founder",
+      "expected": "Sam Altman, Elon Musk, Greg Brockman",
+      "flat_answer": "Sam Altman, Elon Musk, Greg Brockman, Ilya Sutskever, John Schulman, Wojciech Zaremba",
+      "flat_correct": true,
+      "flat_time_sec": 0.0
+    },
+    {
+      "index": 2,
+      "query": "What year was OpenAI founded?",
+      "type": "Year",
+      "expected": "2015",
+      "flat_answer": "2015",
+      "flat_correct": true,
+      "flat_time_sec": 0.0
+    },
+    {
+      "index": 3,
+      "query": "Which city is OpenAI headquartered in?",
+      "type": "Location",
+      "expected": "San Francisco",
+      "flat_answer": "San Francisco, California",
+      "flat_correct": true,
+      "flat_time_sec": 0.0
+    },
+    {
+      "index": 4,
+      "query": "Name the founders of Google.",
+      "type": "Founder",
+      "expected": "Larry Page, Sergey Brin",
+      "flat_answer": "Google is headquartered in Mountain View, California. Its products include Search, YouTube, Android, Chrome, and Google Cloud, and Alphabet Inc. serves as its parent company.",
+      "flat_correct": false,
+      "flat_time_sec": 0.0
+    },
+    {
+      "index": 5,
+      "query": "What is the parent company of the company founded by Larry Page?",
+      "type": "Parent",
+      "expected": "Alphabet Inc.",
+      "flat_answer": "Google was founded in September 1998 by Larry Page and Sergey Brin while they were PhD students at Stanford University. The company grew out of an idea for better web search and later became the core of Alphabet Inc.",
+      "flat_correct": true,
+      "flat_time_sec": 0.0
+    },
+    {
+      "index": 6,
+      "query": "Which company does Satya Nadella lead?",
+      "type": "Multi-hop CEO",
+      "expected": "Microsoft",
+      "flat_answer": "Microsoft is headquartered in Redmond, Washington, and Satya Nadella is the current CEO. Microsoft owns products and platforms such as Windows, Office, Azure, GitHub, and LinkedIn.",
+      "flat_correct": true,
+      "flat_time_sec": 0.0
+    },
+    {
+      "index": 7,
+      "query": "Who founded the company led by Satya Nadella?",
+      "type": "Multi-hop Founder",
+      "expected": "Bill Gates, Paul Allen",
+      "flat_answer": "Satya Nadella",
+      "flat_correct": false,
+      "flat_time_sec": 0.0
+    },
+    {
+      "index": 8,
+      "query": "Who founded the company led by Andy Jassy?",
+      "type": "Multi-hop Founder",
+      "expected": "Jeff Bezos",
+      "flat_answer": "Andy Jassy",
+      "flat_correct": false,
+      "flat_time_sec": 0.0
+    },
+    {
+      "index": 9,
+      "query": "What is the founding year of the company founded by Jeff Bezos?",
+      "type": "Multi-hop Year",
+      "expected": "1994",
+      "flat_answer": "1994",
+      "flat_correct": true,
+      "flat_time_sec": 0.0
+    },
+    {
+      "index": 10,
+      "query": "Which company was founded by Mark Zuckerberg?",
+      "type": "Founder",
+      "expected": "Meta",
+      "flat_answer": "Meta (formerly Facebook) was founded by Mark Zuckerberg, Eduardo Saverin, Andrew McCollum, Dustin Moskovitz, and Chris Hughes in 2004. The company became a major platform for social networking and digital advertising before expanding into AI and virtual reality.",
+      "flat_correct": true,
+      "flat_time_sec": 0.0
+    },
+    {
+      "index": 11,
+      "query": "Who is the CEO of Microsoft?",
+      "type": "CEO",
+      "expected": "Satya Nadella",
+      "flat_answer": "Satya Nadella",
+      "flat_correct": true,
+      "flat_time_sec": 0.0
+    },
+    {
+      "index": 12,
+      "query": "Which city is Microsoft headquartered in?",
+      "type": "Location",
+      "expected": "Redmond",
+      "flat_answer": "Redmond, Washington, and Satya Nadella is the current CEO",
+      "flat_correct": true,
+      "flat_time_sec": 0.0
+    },
+    {
+      "index": 13,
+      "query": "Who founded Tesla?",
+      "type": "Founder",
+      "expected": "Martin Eberhard, Marc Tarpenning",
+      "flat_answer": "Elon Musk, Martin Eberhard, Marc Tarpenning",
+      "flat_correct": true,
+      "flat_time_sec": 0.0
+    },
+    {
+      "index": 14,
+      "query": "When was Tesla founded?",
+      "type": "Year",
+      "expected": "2003",
+      "flat_answer": "2003",
+      "flat_correct": true,
+      "flat_time_sec": 0.0
+    },
+    {
+      "index": 15,
+      "query": "Which city is Tesla headquartered in?",
+      "type": "Location",
+      "expected": "Austin",
+      "flat_answer": "Austin, Texas",
+      "flat_correct": true,
+      "flat_time_sec": 0.0
+    },
+    {
+      "index": 16,
+      "query": "Who is the CEO of Amazon?",
+      "type": "CEO",
+      "expected": "Andy Jassy",
+      "flat_answer": "Andy Jassy",
+      "flat_correct": true,
+      "flat_time_sec": 0.0
+    },
+    {
+      "index": 17,
+      "query": "Who founded Apple?",
+      "type": "Founder",
+      "expected": "Steve Jobs, Steve Wozniak, Ronald Wayne",
+      "flat_answer": "Tim Cook",
+      "flat_correct": false,
+      "flat_time_sec": 0.0
+    },
+    {
+      "index": 18,
+      "query": "Who founded the company whose CEO is Satya Nadella?",
+      "type": "Multi-hop Founder",
+      "expected": "Bill Gates, Paul Allen",
+      "flat_answer": "Satya Nadella",
+      "flat_correct": false,
+      "flat_time_sec": 0.0
+    },
+    {
+      "index": 19,
+      "query": "Who is the CFO of Anthropic?",
+      "type": "Unknown",
+      "expected": "Kh\u00f4ng t\u00ecm th\u1ea5y",
+      "flat_answer": "\u274c Kh\u00f4ng t\u00ecm th\u1ea5y th\u00f4ng tin li\u00ean quan \u0111\u1ebfn c\u00e2u h\u1ecfi: 'Who is the CFO of Anthropic?'",
+      "flat_correct": true,
+      "flat_time_sec": 0.0
+    },
+    {
+      "index": 20,
+      "query": "Where is SpaceX headquartered?",
+      "type": "Unknown",
+      "expected": "Kh\u00f4ng t\u00ecm th\u1ea5y",
+      "flat_answer": "\u274c Kh\u00f4ng t\u00ecm th\u1ea5y th\u00f4ng tin li\u00ean quan \u0111\u1ebfn c\u00e2u h\u1ecfi: 'Where is SpaceX headquartered?'",
+      "flat_correct": true,
+      "flat_time_sec": 0.0
+    }
+  ],
+  "summary": {
+    "num_questions": 20,
+    "graph_accuracy_percent": 100.0,
+    "flat_accuracy_percent": 75.0
+  },
+  "total_triples": 47
+}

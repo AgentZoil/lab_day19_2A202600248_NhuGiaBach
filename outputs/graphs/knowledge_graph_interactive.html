@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Knowledge Graph Interactive View</title>
+  <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f6f8fb;
+    }
+    .wrap {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 12px;
+      height: 100vh;
+      padding: 12px;
+      box-sizing: border-box;
+    }
+    #network {
+      background: white;
+      border-radius: 16px;
+      border: 1px solid #e5e7eb;
+      min-height: 0;
+    }
+    #info {
+      background: white;
+      border-radius: 16px;
+      border: 1px solid #e5e7eb;
+      padding: 16px;
+      overflow: auto;
+    }
+    h1 {
+      font-size: 18px;
+      margin: 0 0 8px 0;
+    }
+    .muted {
+      color: #6b7280;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    .pill {
+      display: inline-block;
+      padding: 4px 8px;
+      margin: 4px 4px 0 0;
+      border-radius: 999px;
+      background: #eef2ff;
+      color: #3730a3;
+      font-size: 12px;
+    }
+    code {
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div id="network"></div>
+    <div id="info">
+      <h1>Knowledge Graph</h1>
+      <div class="muted">
+        Click any node to inspect its details. Use mouse wheel to zoom and drag to pan.
+      </div>
+      <div style="margin-top: 12px;">
+        <span class="pill">Company</span>
+        <span class="pill">Person</span>
+        <span class="pill">Location</span>
+        <span class="pill">Year</span>
+      </div>
+      <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 16px 0;" />
+      <div id="details" class="muted">No node selected.</div>
+    </div>
+  </div>
+
+  <script>
+    const nodes = new vis.DataSet([{"id": "OpenAI", "label": "OpenAI", "title": "<b>OpenAI</b><br>Type: company", "group": "company", "color": "#4E79A7", "shape": "box"}, {"id": "Sam Altman", "label": "Sam Altman", "title": "<b>Sam Altman</b><br>Type: person", "group": "person", "color": "#F28E2B", "shape": "ellipse"}, {"id": "Elon Musk", "label": "Elon Musk", "title": "<b>Elon Musk</b><br>Type: person", "group": "person", "color": "#F28E2B", "shape": "ellipse"}, {"id": "Greg Brockman", "label": "Greg\nBrockman", "title": "<b>Greg Brockman</b><br>Type: person", "group": "person", "color": "#F28E2B", "shape": "ellipse"}, {"id": "Ilya Sutskever", "label": "Ilya\nSutskever", "title": "<b>Ilya Sutskever</b><br>Type: person", "group": "person", "color": "#F28E2B", "shape": "ellipse"}, {"id": "John Schulman", "label": "John\nSchulman", "title": "<b>John Schulman</b><br>Type: person", "group": "person", "color": "#F28E2B", "shape": "ellipse"}, {"id": "Wojciech Zaremba", "label": "Wojciech\nZaremba", "title": "<b>Wojciech Zaremba</b><br>Type: person", "group": "person", "color": "#F28E2B", "shape": "ellipse"}, {"id": "2015", "label": "2015", "title": "<b>2015</b><br>Type: year", "group": "year", "color": "#E15759", "shape": "ellipse"}, {"id": "San Francisco", "label": "San\nFrancisco", "title": "<b>San Francisco</b><br>Type: location", "group": "location", "color": "#59A14F", "shape": "ellipse"}, {"id": "Google", "label": "Google", "title": "<b>Google</b><br>Type: company", "group": "company", "color": "#4E79A7", "shape": "box"}, {"id": "Larry Page", "label": "Larry Page", "title": "<b>Larry Page</b><br>Type: person", "group": "person", "color": "#F28E2B", "shape": "ellipse"}, {"id": "Sergey Brin", "label": "Sergey Brin", "title": "<b>Sergey Brin</b><br>Type: person", "group": "person", "color": "#F28E2B", "shape": "ellipse"}, {"id": "1998", "label": "1998", "title": "<b>1998</b><br>Type: year", "group": "year", "color": "#E15759", "shape": "ellipse"}, {"id": "Mountain View", "label": "Mountain\nView", "title": "<b>Mountain View</b><br>Type: location", "group": "location", "color": "#59A14F", "shape": "ellipse"}, {"id": "Alphabet Inc.", "label": "Alphabet\nInc.", "title": "<b>Alphabet Inc.</b><br>Type: company", "group": "company", "color": "#4E79A7", "shape": "box"}, {"id": "Microsoft", "label": "Microsoft", "title": "<b>Microsoft</b><br>Type: company", "group": "company", "color": "#4E79A7", "shape": "box"}, {"id": "Bill Gates", "label": "Bill Gates", "title": "<b>Bill Gates</b><br>Type: person", "group": "person", "color": "#F28E2B", "shape": "ellipse"}, {"id": "Paul Allen", "label": "Paul Allen", "title": "<b>Paul Allen</b><br>Type: person", "group": "person", "color": "#F28E2B", "shape": "ellipse"}, {"id": "1975", "label": "1975", "title": "<b>1975</b><br>Type: year", "group": "year", "color": "#E15759", "shape": "ellipse"}, {"id": "Satya Nadella", "label": "Satya\nNadella", "title": "<b>Satya Nadella</b><br>Type: person", "group": "person", "color": "#F28E2B", "shape": "ellipse"}, {"id": "Redmond", "label": "Redmond", "title": "<b>Redmond</b><br>Type: location", "group": "location", "color": "#59A14F", "shape": "ellipse"}, {"id": "Meta", "label": "Meta", "title": "<b>Meta</b><br>Type: company", "group": "company", "color": "#4E79A7", "shape": "box"}, {"id": "Mark Zuckerberg", "label": "Mark\nZuckerberg", "title": "<b>Mark Zuckerberg</b><br>Type: person", "group": "person", "color": "#F28E2B", "shape": "ellipse"}, {"id": "Eduardo Saverin", "label": "Eduardo\nSaverin", "title": "<b>Eduardo Saverin</b><br>Type: person", "group": "person", "color": "#F28E2B", "shape": "ellipse"}, {"id": "Andrew McCollum", "label": "Andrew\nMcCollum", "title": "<b>Andrew McCollum</b><br>Type: person", "group": "person", "color": "#F28E2B", "shape": "ellipse"}, {"id": "Dustin Moskovitz", "label": "Dustin\nMoskovitz", "title": "<b>Dustin Moskovitz</b><br>Type: person", "group": "person", "color": "#F28E2B", "shape": "ellipse"}, {"id": "Chris Hughes", "label": "Chris Hughes", "title": "<b>Chris Hughes</b><br>Type: person", "group": "person", "color": "#F28E2B", "shape": "ellipse"}, {"id": "2004", "label": "2004", "title": "<b>2004</b><br>Type: year", "group": "year", "color": "#E15759", "shape": "ellipse"}, {"id": "Menlo Park", "label": "Menlo Park", "title": "<b>Menlo Park</b><br>Type: location", "group": "location", "color": "#59A14F", "shape": "ellipse"}, {"id": "Amazon", "label": "Amazon", "title": "<b>Amazon</b><br>Type: company", "group": "company", "color": "#4E79A7", "shape": "box"}, {"id": "Jeff Bezos", "label": "Jeff Bezos", "title": "<b>Jeff Bezos</b><br>Type: person", "group": "person", "color": "#F28E2B", "shape": "ellipse"}, {"id": "1994", "label": "1994", "title": "<b>1994</b><br>Type: year", "group": "year", "color": "#E15759", "shape": "ellipse"}, {"id": "Andy Jassy", "label": "Andy Jassy", "title": "<b>Andy Jassy</b><br>Type: person", "group": "person", "color": "#F28E2B", "shape": "ellipse"}, {"id": "Seattle", "label": "Seattle", "title": "<b>Seattle</b><br>Type: location", "group": "location", "color": "#59A14F", "shape": "ellipse"}, {"id": "Apple", "label": "Apple", "title": "<b>Apple</b><br>Type: company", "group": "company", "color": "#4E79A7", "shape": "box"}, {"id": "Steve Jobs", "label": "Steve Jobs", "title": "<b>Steve Jobs</b><br>Type: person", "group": "person", "color": "#F28E2B", "shape": "ellipse"}, {"id": "Steve Wozniak", "label": "Steve\nWozniak", "title": "<b>Steve Wozniak</b><br>Type: person", "group": "person", "color": "#F28E2B", "shape": "ellipse"}, {"id": "Ronald Wayne", "label": "Ronald Wayne", "title": "<b>Ronald Wayne</b><br>Type: person", "group": "person", "color": "#F28E2B", "shape": "ellipse"}, {"id": "1976", "label": "1976", "title": "<b>1976</b><br>Type: year", "group": "year", "color": "#E15759", "shape": "ellipse"}, {"id": "Tim Cook", "label": "Tim Cook", "title": "<b>Tim Cook</b><br>Type: person", "group": "person", "color": "#F28E2B", "shape": "ellipse"}, {"id": "Cupertino", "label": "Cupertino", "title": "<b>Cupertino</b><br>Type: location", "group": "location", "color": "#59A14F", "shape": "ellipse"}, {"id": "Tesla", "label": "Tesla", "title": "<b>Tesla</b><br>Type: company", "group": "company", "color": "#4E79A7", "shape": "box"}, {"id": "Martin Eberhard", "label": "Martin\nEberhard", "title": "<b>Martin Eberhard</b><br>Type: person", "group": "person", "color": "#F28E2B", "shape": "ellipse"}, {"id": "Marc Tarpenning", "label": "Marc\nTarpenning", "title": "<b>Marc Tarpenning</b><br>Type: person", "group": "person", "color": "#F28E2B", "shape": "ellipse"}, {"id": "2003", "label": "2003", "title": "<b>2003</b><br>Type: year", "group": "year", "color": "#E15759", "shape": "ellipse"}, {"id": "Austin", "label": "Austin", "title": "<b>Austin</b><br>Type: location", "group": "location", "color": "#59A14F", "shape": "ellipse"}, {"id": "NVIDIA", "label": "NVIDIA", "title": "<b>NVIDIA</b><br>Type: company", "group": "company", "color": "#4E79A7", "shape": "box"}, {"id": "Jensen Huang", "label": "Jensen Huang", "title": "<b>Jensen Huang</b><br>Type: person", "group": "person", "color": "#F28E2B", "shape": "ellipse"}, {"id": "Chris Malachowsky", "label": "Chris\nMalachowsky", "title": "<b>Chris Malachowsky</b><br>Type: person", "group": "person", "color": "#F28E2B", "shape": "ellipse"}, {"id": "Curtis Priem", "label": "Curtis Priem", "title": "<b>Curtis Priem</b><br>Type: person", "group": "person", "color": "#F28E2B", "shape": "ellipse"}, {"id": "1993", "label": "1993", "title": "<b>1993</b><br>Type: year", "group": "year", "color": "#E15759", "shape": "ellipse"}, {"id": "Santa Clara", "label": "Santa Clara", "title": "<b>Santa Clara</b><br>Type: location", "group": "location", "color": "#59A14F", "shape": "ellipse"}]);
+    const edges = new vis.DataSet([{"from": "OpenAI", "to": "Sam Altman", "label": "FOUNDED_BY", "arrows": "to", "font": {"size": 10, "align": "middle"}, "title": "FOUNDED_BY", "color": {"color": "#888888", "highlight": "#333333"}}, {"from": "OpenAI", "to": "Elon Musk", "label": "FOUNDED_BY", "arrows": "to", "font": {"size": 10, "align": "middle"}, "title": "FOUNDED_BY", "color": {"color": "#888888", "highlight": "#333333"}}, {"from": "OpenAI", "to": "Greg Brockman", "label": "FOUNDED_BY", "arrows": "to", "font": {"size": 10, "align": "middle"}, "title": "FOUNDED_BY", "color": {"color": "#888888", "highlight": "#333333"}}, {"from": "OpenAI", "to": "Ilya Sutskever", "label": "FOUNDED_BY", "arrows": "to", "font": {"size": 10, "align": "middle"}, "title": "FOUNDED_BY", "color": {"color": "#888888", "highlight": "#333333"}}, {"from": "OpenAI", "to": "John Schulman", "label": "FOUNDED_BY", "arrows": "to", "font": {"size": 10, "align": "middle"}, "title": "FOUNDED_BY", "color": {"color": "#888888", "highlight": "#333333"}}, {"from": "OpenAI", "to": "Wojciech Zaremba", "label": "FOUNDED_BY", "arrows": "to", "font": {"size": 10, "align": "middle"}, "title": "FOUNDED_BY", "color": {"color": "#888888", "highlight": "#333333"}}, {"from": "OpenAI", "to": "2015", "label": "FOUNDED_IN", "arrows": "to", "font": {"size": 10, "align": "middle"}, "title": "FOUNDED_IN", "color": {"color": "#888888", "highlight": "#333333"}}, {"from": "OpenAI", "to": "San Francisco", "label": "HEADQUARTERED_IN", "arrows": "to", "font": {"size": 10, "align": "middle"}, "title": "HEADQUARTERED_IN", "color": {"color": "#888888", "highlight": "#333333"}}, {"from": "Google", "to": "Larry Page", "label": "FOUNDED_BY", "arrows": "to", "font": {"size": 10, "align": "middle"}, "title": "FOUNDED_BY", "color": {"color": "#888888", "highlight": "#333333"}}, {"from": "Google", "to": "Sergey Brin", "label": "FOUNDED_BY", "arrows": "to", "font": {"size": 10, "align": "middle"}, "title": "FOUNDED_BY", "color": {"color": "#888888", "highlight": "#333333"}}, {"from": "Google", "to": "1998", "label": "FOUNDED_IN", "arrows": "to", "font": {"size": 10, "align": "middle"}, "title": "FOUNDED_IN", "color": {"color": "#888888", "highlight": "#333333"}}, {"from": "Google", "to": "Mountain View", "label": "HEADQUARTERED_IN", "arrows": "to", "font": {"size": 10, "align": "middle"}, "title": "HEADQUARTERED_IN", "color": {"color": "#888888", "highlight": "#333333"}}, {"from": "Google", "to": "Alphabet Inc.", "label": "PARENT_COMPANY", "arrows": "to", "font": {"size": 10, "align": "middle"}, "title": "PARENT_COMPANY", "color": {"color": "#888888", "highlight": "#333333"}}, {"from": "Microsoft", "to": "Bill Gates", "label": "FOUNDED_BY", "arrows": "to", "font": {"size": 10, "align": "middle"}, "title": "FOUNDED_BY", "color": {"color": "#888888", "highlight": "#333333"}}, {"from": "Microsoft", "to": "Paul Allen", "label": "FOUNDED_BY", "arrows": "to", "font": {"size": 10, "align": "middle"}, "title": "FOUNDED_BY", "color": {"color": "#888888", "highlight": "#333333"}}, {"from": "Microsoft", "to": "1975", "label": "FOUNDED_IN", "arrows": "to", "font": {"size": 10, "align": "middle"}, "title": "FOUNDED_IN", "color": {"color": "#888888", "highlight": "#333333"}}, {"from": "Microsoft", "to": "Satya Nadella", "label": "CEO", "arrows": "to", "font": {"size": 10, "align": "middle"}, "title": "CEO", "color": {"color": "#888888", "highlight": "#333333"}}, {"from": "Microsoft", "to": "Redmond", "label": "HEADQUARTERED_IN", "arrows": "to", "font": {"size": 10, "align": "middle"}, "title": "HEADQUARTERED_IN", "color": {"color": "#888888", "highlight": "#333333"}}, {"from": "Meta", "to": "Mark Zuckerberg", "label": "FOUNDED_BY", "arrows": "to", "font": {"size": 10, "align": "middle"}, "title": "FOUNDED_BY", "color": {"color": "#888888", "highlight": "#333333"}}, {"from": "Meta", "to": "Eduardo Saverin", "label": "FOUNDED_BY", "arrows": "to", "font": {"size": 10, "align": "middle"}, "title": "FOUNDED_BY", "color": {"color": "#888888", "highlight": "#333333"}}, {"from": "Meta", "to": "Andrew McCollum", "label": "FOUNDED_BY", "arrows": "to", "font": {"size": 10, "align": "middle"}, "title": "FOUNDED_BY", "color": {"color": "#888888", "highlight": "#333333"}}, {"from": "Meta", "to": "Dustin Moskovitz", "label": "FOUNDED_BY", "arrows": "to", "font": {"size": 10, "align": "middle"}, "title": "FOUNDED_BY", "color": {"color": "#888888", "highlight": "#333333"}}, {"from": "Meta", "to": "Chris Hughes", "label": "FOUNDED_BY", "arrows": "to", "font": {"size": 10, "align": "middle"}, "title": "FOUNDED_BY", "color": {"color": "#888888", "highlight": "#333333"}}, {"from": "Meta", "to": "2004", "label": "FOUNDED_IN", "arrows": "to", "font": {"size": 10, "align": "middle"}, "title": "FOUNDED_IN", "color": {"color": "#888888", "highlight": "#333333"}}, {"from": "Meta", "to": "Menlo Park", "label": "HEADQUARTERED_IN", "arrows": "to", "font": {"size": 10, "align": "middle"}, "title": "HEADQUARTERED_IN", "color": {"color": "#888888", "highlight": "#333333"}}, {"from": "Meta", "to": "Meta", "label": "RENAMED_TO", "arrows": "to", "font": {"size": 10, "align": "middle"}, "title": "RENAMED_TO", "color": {"color": "#888888", "highlight": "#333333"}}, {"from": "Amazon", "to": "Jeff Bezos", "label": "FOUNDED_BY", "arrows": "to", "font": {"size": 10, "align": "middle"}, "title": "FOUNDED_BY", "color": {"color": "#888888", "highlight": "#333333"}}, {"from": "Amazon", "to": "1994", "label": "FOUNDED_IN", "arrows": "to", "font": {"size": 10, "align": "middle"}, "title": "FOUNDED_IN", "color": {"color": "#888888", "highlight": "#333333"}}, {"from": "Amazon", "to": "Andy Jassy", "label": "CEO", "arrows": "to", "font": {"size": 10, "align": "middle"}, "title": "CEO", "color": {"color": "#888888", "highlight": "#333333"}}, {"from": "Amazon", "to": "Seattle", "label": "HEADQUARTERED_IN", "arrows": "to", "font": {"size": 10, "align": "middle"}, "title": "HEADQUARTERED_IN", "color": {"color": "#888888", "highlight": "#333333"}}, {"from": "Apple", "to": "Steve Jobs", "label": "FOUNDED_BY", "arrows": "to", "font": {"size": 10, "align": "middle"}, "title": "FOUNDED_BY", "color": {"color": "#888888", "highlight": "#333333"}}, {"from": "Apple", "to": "Steve Wozniak", "label": "FOUNDED_BY", "arrows": "to", "font": {"size": 10, "align": "middle"}, "title": "FOUNDED_BY", "color": {"color": "#888888", "highlight": "#333333"}}, {"from": "Apple", "to": "Ronald Wayne", "label": "FOUNDED_BY", "arrows": "to", "font": {"size": 10, "align": "middle"}, "title": "FOUNDED_BY", "color": {"color": "#888888", "highlight": "#333333"}}, {"from": "Apple", "to": "1976", "label": "FOUNDED_IN", "arrows": "to", "font": {"size": 10, "align": "middle"}, "title": "FOUNDED_IN", "color": {"color": "#888888", "highlight": "#333333"}}, {"from": "Apple", "to": "Tim Cook", "label": "CEO", "arrows": "to", "font": {"size": 10, "align": "middle"}, "title": "CEO", "color": {"color": "#888888", "highlight": "#333333"}}, {"from": "Apple", "to": "Cupertino", "label": "HEADQUARTERED_IN", "arrows": "to", "font": {"size": 10, "align": "middle"}, "title": "HEADQUARTERED_IN", "color": {"color": "#888888", "highlight": "#333333"}}, {"from": "Tesla", "to": "Martin Eberhard", "label": "FOUNDED_BY", "arrows": "to", "font": {"size": 10, "align": "middle"}, "title": "FOUNDED_BY", "color": {"color": "#888888", "highlight": "#333333"}}, {"from": "Tesla", "to": "Marc Tarpenning", "label": "FOUNDED_BY", "arrows": "to", "font": {"size": 10, "align": "middle"}, "title": "FOUNDED_BY", "color": {"color": "#888888", "highlight": "#333333"}}, {"from": "Tesla", "to": "2003", "label": "FOUNDED_IN", "arrows": "to", "font": {"size": 10, "align": "middle"}, "title": "FOUNDED_IN", "color": {"color": "#888888", "highlight": "#333333"}}, {"from": "Tesla", "to": "Elon Musk", "label": "CEO", "arrows": "to", "font": {"size": 10, "align": "middle"}, "title": "CEO", "color": {"color": "#888888", "highlight": "#333333"}}, {"from": "Tesla", "to": "Austin", "label": "HEADQUARTERED_IN", "arrows": "to", "font": {"size": 10, "align": "middle"}, "title": "HEADQUARTERED_IN", "color": {"color": "#888888", "highlight": "#333333"}}, {"from": "NVIDIA", "to": "Jensen Huang", "label": "CEO", "arrows": "to", "font": {"size": 10, "align": "middle"}, "title": "CEO", "color": {"color": "#888888", "highlight": "#333333"}}, {"from": "NVIDIA", "to": "Chris Malachowsky", "label": "FOUNDED_BY", "arrows": "to", "font": {"size": 10, "align": "middle"}, "title": "FOUNDED_BY", "color": {"color": "#888888", "highlight": "#333333"}}, {"from": "NVIDIA", "to": "Curtis Priem", "label": "FOUNDED_BY", "arrows": "to", "font": {"size": 10, "align": "middle"}, "title": "FOUNDED_BY", "color": {"color": "#888888", "highlight": "#333333"}}, {"from": "NVIDIA", "to": "1993", "label": "FOUNDED_IN", "arrows": "to", "font": {"size": 10, "align": "middle"}, "title": "FOUNDED_IN", "color": {"color": "#888888", "highlight": "#333333"}}, {"from": "NVIDIA", "to": "Santa Clara", "label": "HEADQUARTERED_IN", "arrows": "to", "font": {"size": 10, "align": "middle"}, "title": "HEADQUARTERED_IN", "color": {"color": "#888888", "highlight": "#333333"}}]);
+    const container = document.getElementById('network');
+    const details = document.getElementById('details');
+    const data = { nodes: nodes, edges: edges };
+    const options = {
+      layout: {
+        improvedLayout: true
+      },
+      nodes: {
+        borderWidth: 1,
+        shadow: true,
+        font: {
+          size: 14,
+          face: 'Arial'
+        }
+      },
+      edges: {
+        smooth: {
+          type: 'dynamic'
+        },
+        shadow: false,
+        width: 1.2
+      },
+      interaction: {
+        hover: true,
+        tooltipDelay: 120,
+        navigationButtons: true,
+        keyboard: true
+      },
+      physics: {
+        enabled: true,
+        barnesHut: {
+          gravitationalConstant: -4200,
+          springLength: 160,
+          springConstant: 0.03,
+          damping: 0.09,
+          avoidOverlap: 0.6
+        }
+      }
+    };
+
+    const network = new vis.Network(container, data, options);
+
+    network.on('click', function (params) {
+      if (params.nodes.length === 0) {
+        details.innerHTML = 'No node selected.';
+        return;
+      }
+      const id = params.nodes[0];
+      const node = nodes.get(id);
+      const neighbors = network.getConnectedNodes(id);
+      const connectedEdges = network.getConnectedEdges(id).map(eid => edges.get(eid));
+      const relList = connectedEdges.map(e => `• ${e.from} -- ${e.label || ''} --> ${e.to}`).join('<br>');
+      details.innerHTML = `
+        <div><b>Node:</b> ${node.id}</div>
+        <div><b>Type:</b> ${node.group}</div>
+        <div><b>Connected nodes:</b> ${neighbors.length}</div>
+        <div style="margin-top:8px;"><b>Relations</b></div>
+        <code>${relList || 'No relations'}</code>
+      `;
+    });
+  </script>
+</body>
+</html>
