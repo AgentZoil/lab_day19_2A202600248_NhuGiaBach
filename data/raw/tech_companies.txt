@@ -1,15 +1,31 @@
-OpenAI was founded in December 2015 by Sam Altman, Elon Musk, Greg Brockman, Ilya Sutskever, John Schulman, and Wojciech Zaremba. The company is based in San Francisco, California.
+OpenAI was founded in December 2015 by Sam Altman, Elon Musk, Greg Brockman, Ilya Sutskever, John Schulman, and Wojciech Zaremba. The founders wanted to build safe general-purpose artificial intelligence and later created ChatGPT as part of that effort.
 
-Google was founded in September 1998 by Larry Page and Sergey Brin while they were PhD students at Stanford University. Google's parent company is Alphabet Inc.
+OpenAI is based in San Francisco, California. It has worked closely with Microsoft Azure for model deployment and enterprise distribution, which makes it a useful partner in the broader AI ecosystem.
 
-Microsoft was founded by Bill Gates and Paul Allen on April 4, 1975. The company is headquartered in Redmond, Washington. Satya Nadella is the current CEO of Microsoft.
+Google was founded in September 1998 by Larry Page and Sergey Brin while they were PhD students at Stanford University. The company grew out of an idea for better web search and later became the core of Alphabet Inc.
 
-Meta (formerly Facebook) was founded by Mark Zuckerberg, Eduardo Saverin, Andrew McCollum, Dustin Moskovitz, and Chris Hughes in 2004. The company is headquartered in Menlo Park, California.
+Google is headquartered in Mountain View, California. Its products include Search, YouTube, Android, Chrome, and Google Cloud, and Alphabet Inc. serves as its parent company.
 
-Amazon was founded by Jeff Bezos in July 1994 in Bellevue, Washington. Andy Jassy is the current CEO of Amazon. The company operates in e-commerce, cloud computing (AWS), and digital streaming.
+Microsoft was founded by Bill Gates and Paul Allen on April 4, 1975. The company started with software for personal computers and later expanded into operating systems, productivity tools, and cloud infrastructure.
 
-Apple Inc. was founded by Steve Jobs, Steve Wozniak, and Ronald Wayne in April 1976. Tim Cook is the current CEO. Apple is headquartered in Cupertino, California.
+Microsoft is headquartered in Redmond, Washington, and Satya Nadella is the current CEO. Microsoft owns products and platforms such as Windows, Office, Azure, GitHub, and LinkedIn.
 
-Tesla was founded in July 2003 by Martin Eberhard and Marc Tarpenning. Elon Musk joined as chairman and later became CEO. Tesla is headquartered in Austin, Texas.
+Meta (formerly Facebook) was founded by Mark Zuckerberg, Eduardo Saverin, Andrew McCollum, Dustin Moskovitz, and Chris Hughes in 2004. The company became a major platform for social networking and digital advertising before expanding into AI and virtual reality.
 
-NVIDIA was founded in April 1993 by Jensen Huang, Chris Malachowsky, and Curtis Priem. Jensen Huang has been the CEO since the company's founding.
+Meta is headquartered in Menlo Park, California. Meta owns Facebook, Instagram, WhatsApp, and Threads, and the company invests heavily in the Reality Labs division.
+
+Amazon was founded by Jeff Bezos in July 1994 in Bellevue, Washington. It began as an online bookstore and later expanded into e-commerce, logistics, streaming, and cloud computing through AWS.
+
+Amazon is headquartered in Seattle, Washington, and Andy Jassy is the current CEO. Amazon also operates in digital streaming, retail, robotics, and AI services.
+
+Apple Inc. was founded by Steve Jobs, Steve Wozniak, and Ronald Wayne in April 1976. The company is known for building tightly integrated hardware and software products for consumers.
+
+Apple is headquartered in Cupertino, California, and Tim Cook is the current CEO. Apple designs the iPhone, Mac, iPad, Apple Watch, and Vision Pro, and its ecosystem includes iCloud, Apple Music, and the App Store.
+
+Tesla was founded in July 2003 by Martin Eberhard and Marc Tarpenning. Elon Musk later joined as chairman and became the public face of the company as it moved into mass-market electric vehicles.
+
+Tesla is headquartered in Austin, Texas. The company builds electric vehicles, battery storage systems, and solar products, and it also works on autonomous driving and robotics.
+
+NVIDIA was founded in April 1993 by Jensen Huang, Chris Malachowsky, and Curtis Priem. The company became a major player in graphics processors before expanding into accelerated computing.
+
+NVIDIA is headquartered in Santa Clara, California, and Jensen Huang has been the CEO since the company's founding. NVIDIA is known for GPUs, CUDA, AI accelerators, and data-center hardware.

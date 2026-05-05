@@ -1,0 +1,237 @@
+[
+  [
+    "OpenAI",
+    "FOUNDED_BY",
+    "Sam Altman"
+  ],
+  [
+    "OpenAI",
+    "FOUNDED_BY",
+    "Elon Musk"
+  ],
+  [
+    "OpenAI",
+    "FOUNDED_BY",
+    "Greg Brockman"
+  ],
+  [
+    "OpenAI",
+    "FOUNDED_BY",
+    "Ilya Sutskever"
+  ],
+  [
+    "OpenAI",
+    "FOUNDED_BY",
+    "John Schulman"
+  ],
+  [
+    "OpenAI",
+    "FOUNDED_BY",
+    "Wojciech Zaremba"
+  ],
+  [
+    "OpenAI",
+    "FOUNDED_IN",
+    "2015"
+  ],
+  [
+    "OpenAI",
+    "HEADQUARTERED_IN",
+    "San Francisco"
+  ],
+  [
+    "Google",
+    "FOUNDED_BY",
+    "Larry Page"
+  ],
+  [
+    "Google",
+    "FOUNDED_BY",
+    "Sergey Brin"
+  ],
+  [
+    "Google",
+    "FOUNDED_IN",
+    "1998"
+  ],
+  [
+    "Google",
+    "PARENT_COMPANY",
+    "Alphabet Inc."
+  ],
+  [
+    "Google",
+    "HEADQUARTERED_IN",
+    "Mountain View"
+  ],
+  [
+    "Google",
+    "PARENT_COMPANY",
+    "Alphabet Inc."
+  ],
+  [
+    "Microsoft",
+    "FOUNDED_BY",
+    "Bill Gates"
+  ],
+  [
+    "Microsoft",
+    "FOUNDED_BY",
+    "Paul Allen"
+  ],
+  [
+    "Microsoft",
+    "FOUNDED_IN",
+    "1975"
+  ],
+  [
+    "Microsoft",
+    "CEO",
+    "Satya Nadella"
+  ],
+  [
+    "Microsoft",
+    "HEADQUARTERED_IN",
+    "Redmond"
+  ],
+  [
+    "Meta",
+    "FOUNDED_BY",
+    "Mark Zuckerberg"
+  ],
+  [
+    "Meta",
+    "FOUNDED_BY",
+    "Eduardo Saverin"
+  ],
+  [
+    "Meta",
+    "FOUNDED_BY",
+    "Andrew McCollum"
+  ],
+  [
+    "Meta",
+    "FOUNDED_BY",
+    "Dustin Moskovitz"
+  ],
+  [
+    "Meta",
+    "FOUNDED_BY",
+    "Chris Hughes"
+  ],
+  [
+    "Meta",
+    "FOUNDED_IN",
+    "2004"
+  ],
+  [
+    "Meta",
+    "RENAMED_TO",
+    "Meta"
+  ],
+  [
+    "Meta",
+    "HEADQUARTERED_IN",
+    "Menlo Park"
+  ],
+  [
+    "Amazon",
+    "FOUNDED_BY",
+    "Jeff Bezos"
+  ],
+  [
+    "Amazon",
+    "FOUNDED_IN",
+    "1994"
+  ],
+  [
+    "Amazon",
+    "CEO",
+    "Andy Jassy"
+  ],
+  [
+    "Amazon",
+    "HEADQUARTERED_IN",
+    "Seattle"
+  ],
+  [
+    "Apple",
+    "FOUNDED_BY",
+    "Steve Jobs"
+  ],
+  [
+    "Apple",
+    "FOUNDED_BY",
+    "Steve Wozniak"
+  ],
+  [
+    "Apple",
+    "FOUNDED_BY",
+    "Ronald Wayne"
+  ],
+  [
+    "Apple",
+    "FOUNDED_IN",
+    "1976"
+  ],
+  [
+    "Apple",
+    "CEO",
+    "Tim Cook"
+  ],
+  [
+    "Apple",
+    "HEADQUARTERED_IN",
+    "Cupertino"
+  ],
+  [
+    "Tesla",
+    "FOUNDED_BY",
+    "Martin Eberhard"
+  ],
+  [
+    "Tesla",
+    "FOUNDED_BY",
+    "Marc Tarpenning"
+  ],
+  [
+    "Tesla",
+    "FOUNDED_IN",
+    "2003"
+  ],
+  [
+    "Tesla",
+    "HEADQUARTERED_IN",
+    "Austin"
+  ],
+  [
+    "NVIDIA",
+    "FOUNDED_BY",
+    "Jensen Huang"
+  ],
+  [
+    "NVIDIA",
+    "FOUNDED_BY",
+    "Chris Malachowsky"
+  ],
+  [
+    "NVIDIA",
+    "FOUNDED_BY",
+    "Curtis Priem"
+  ],
+  [
+    "NVIDIA",
+    "FOUNDED_IN",
+    "1993"
+  ],
+  [
+    "NVIDIA",
+    "CEO",
+    "Jensen Huang"
+  ],
+  [
+    "NVIDIA",
+    "HEADQUARTERED_IN",
+    "Santa Clara"
+  ]
+]
