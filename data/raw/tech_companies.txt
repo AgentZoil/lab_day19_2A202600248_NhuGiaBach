@@ -1,0 +1,15 @@
+OpenAI was founded in December 2015 by Sam Altman, Elon Musk, Greg Brockman, Ilya Sutskever, John Schulman, and Wojciech Zaremba. The company is based in San Francisco, California.
+
+Google was founded in September 1998 by Larry Page and Sergey Brin while they were PhD students at Stanford University. Google's parent company is Alphabet Inc.
+
+Microsoft was founded by Bill Gates and Paul Allen on April 4, 1975. The company is headquartered in Redmond, Washington. Satya Nadella is the current CEO of Microsoft.
+
+Meta (formerly Facebook) was founded by Mark Zuckerberg, Eduardo Saverin, Andrew McCollum, Dustin Moskovitz, and Chris Hughes in 2004. The company is headquartered in Menlo Park, California.
+
+Amazon was founded by Jeff Bezos in July 1994 in Bellevue, Washington. Andy Jassy is the current CEO of Amazon. The company operates in e-commerce, cloud computing (AWS), and digital streaming.
+
+Apple Inc. was founded by Steve Jobs, Steve Wozniak, and Ronald Wayne in April 1976. Tim Cook is the current CEO. Apple is headquartered in Cupertino, California.
+
+Tesla was founded in July 2003 by Martin Eberhard and Marc Tarpenning. Elon Musk joined as chairman and later became CEO. Tesla is headquartered in Austin, Texas.
+
+NVIDIA was founded in April 1993 by Jensen Huang, Chris Malachowsky, and Curtis Priem. Jensen Huang has been the CEO since the company's founding.

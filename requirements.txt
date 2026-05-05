@@ -1,0 +1,15 @@
+# Core 
+networkx>=3.0
+matplotlib>=3.5
+pandas>=2.0
+
+# LLM (chỉ cần nếu dùng OpenAI để extract)
+openai>=1.0
+python-dotenv>=1.0
+
+# Utilities
+tqdm>=4.66
+
+# Jupyter (tuỳ chọn)
+jupyter>=1.0
+ipykernel>=6.25
