@@ -140,7 +140,7 @@ class GraphBuilder:
         output_path: str = "outputs/graphs/knowledge_graph.png",
         focus_nodes: Optional[List[str]] = None,
         hops: int = 1,
-        show_edge_labels: Optional[bool] = None,
+        show_edge_labels: bool = True,
     ):
         os.makedirs(os.path.dirname(output_path), exist_ok=True)
         graph = self.graph
@@ -200,10 +200,16 @@ class GraphBuilder:
         nx.draw_networkx_labels(graph, pos, labels=labels, font_size=6.5, font_weight='bold')
 
         edge_labels = {(u, v): d['relation'] for u, v, d in graph.edges(data=True)}
-        if show_edge_labels is None:
-            show_edge_labels = focus_nodes is not None or graph.number_of_edges() <= 18
         if show_edge_labels:
-            nx.draw_networkx_edge_labels(graph, pos, edge_labels, font_size=5.8, label_pos=0.55)
+            nx.draw_networkx_edge_labels(
+                graph,
+                pos,
+                edge_labels,
+                font_size=6.2,
+                label_pos=0.55,
+                rotate=False,
+                bbox={"boxstyle": "round,pad=0.2", "fc": "white", "ec": "#d1d5db", "alpha": 0.9},
+            )
 
         title = "Knowledge Graph - Tech Companies"
         if focus_nodes:
@@ -286,7 +292,13 @@ class GraphBuilder:
                 "to": v,
                 "label": relation,
                 "arrows": "to",
-                "font": {"size": 10, "align": "middle"},
+                "font": {
+                    "size": 13,
+                    "align": "middle",
+                    "strokeWidth": 3,
+                    "strokeColor": "#ffffff",
+                    "vadjust": -4,
+                },
                 "title": relation,
                 "color": {"color": "#888888", "highlight": "#333333"},
             })
@@ -392,7 +404,13 @@ class GraphBuilder:
           type: 'dynamic'
         }},
         shadow: false,
-        width: 1.2
+        width: 1.2,
+        font: {{
+          size: 13,
+          align: 'middle',
+          strokeWidth: 3,
+          strokeColor: '#ffffff'
+        }}
       }},
       interaction: {{
         hover: true,

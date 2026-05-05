@@ -267,7 +267,7 @@ def save_comparison_table(rows: List[Dict[str, str]], output_path: Path) -> None
 def main():
     print("=" * 60)
     print("LAB DAY 19 - GRAPHRAG WITH NETWORKX")
-    print("Student: Nhu Gia Bach (2A2026248)")
+    print("Student: Nhu Gia Bach (2A202600248)")
     print("=" * 60)
 
     print("\n[Step 1] Building Knowledge Graph with NetworkX...")
